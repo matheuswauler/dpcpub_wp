@@ -1,0 +1,83 @@
+body{
+	font-family: 'Lato', 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 1.5em;
+	color: #242424;
+}
+
+.content{
+	width: 980px;
+	margin: 0 auto;
+}
+.content_smaller{
+	width: 700px;
+}
+
+header#site_header{
+	text-align: center;
+}
+header#site_header .header_inner{
+	padding: 20px 0;
+	border-bottom: 1px solid #dfdfdf;
+}
+header#site_header h1{
+	margin: 0;
+	float: left;
+}
+header#site_header .menu_principal{
+	float: right;
+	margin: 3px 0;
+}
+header#site_header .menu_principal a{
+	color: #242424;
+	padding: 5px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: all 0.3s ease;
+	line-height: 1em;
+	margin-left: 10px;
+}
+header#site_header .menu_principal a:hover,
+header#site_header .menu_principal a.selected{
+	color: #79c441;
+	border-color: #79c441;
+}
+
+footer#site_footer{
+	background: #e8e8e8;
+	color: #979797;
+	font-size: 14px;
+	padding: 8px 0;
+}
+footer#site_footer .text_left,
+footer#site_footer .text_right{
+	width: 50%;
+	float: left;
+}
+footer#site_footer .text_right{
+	text-align: right;
+}
+
+/*Home*/
+.black_track_description{
+	color: #ffffff;
+	padding: 30px 0;
+	text-align: center;
+	background: url('../images/bg_hands.jpg') center bottom no-repeat #262626;
+}
+.black_track_description h1{
+	color: #79c441;
+	text-transform: uppercase;
+	margin: 10px 0 30px;
+}
+
+.green_track{
+	background: #79c441;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.3em;
+	padding: 30px 0;
+}
