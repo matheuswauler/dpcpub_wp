@@ -12,9 +12,9 @@ class SREG_Form {
 
 	static function text($option, $vals, $class = 'wide') {
 	?>
-		<div class="option-field <?php echo apply_filters($option['name'].'_error_class',''); ?>">
+		<div class="option-field <?php echo $option['name']; ?>">
 			<label for="<?php echo $option['name']; ?>"><?php echo $option['label'] . show_required($option); ?></label>
-			<input type="text" name="<?php echo $option['name']; ?>" id="<?php echo $option['name']; ?>" value="<?php echo esc_attr($vals); ?>" class="<?php echo @$class; ?> <?php echo @$class; ?>"/>
+			<input type="text" name="<?php echo $option['name']; ?>" id="<?php echo $option['name']; ?>" placeholder="<?php echo $option['label']; ?>" value="<?php echo esc_attr($vals); ?>" class="<?php echo @$class; ?> <?php echo @$class; ?>"/>
 			<?php if(isset($option['comment'])) { echo '<div class="form-comment">'.$option['comment'].'</div>'; } ?>
 		</div>
 		<div class="simplr-clr"></div>
@@ -27,11 +27,11 @@ class SREG_Form {
 	<?php }
 
 	static function select($option, $vals, $class, $options_array) { ?>
-	<div class="option-field select <?php echo apply_filters($option['name'].'_error_class',''); ?>">
+	<div class="option-field select <?php echo $option['name']; ?>">
 	<?php $vals = (!is_array($vals)) ? array($vals) : $vals; ?>
 	<label for="<?php echo $option['name']; ?>"><?php echo $option['label'] . show_required($option); ?></label>
 		<select name="<?php echo $option['name']; ?>" class="<?php echo @$class; ?>" <?php if(@$option['multiple']) { echo 'multiple'; } ?>>
-			<option value=""><?php _e('Select ...','simplr-reg'); ?> </option>
+			<option value=""><?php _e($option['label'],'simplr-reg'); ?> </option>
 			<?php $options_array = (!$options_array) ? SREG_Form::helper($option['helper']) : $options_array; ?>
 			<?php foreach($options_array as $k => $v): ?>
 				<?php if(is_numeric($k)) { $k = $v; } ?>
@@ -54,7 +54,7 @@ class SREG_Form {
 	<?php $size = (!empty($size)) ? $size : $option['size']; ?>
 	<div class="option-field textarea <?php echo apply_filters($option['name'].'_error_class',''); ?>">
 		<label for="<?php echo $option['name']; ?>"><?php echo $option['label'] . show_required($option); ?></label>
-		<textarea name="<?php echo $option['name']; ?>" id="<?php echo $div_id; ?>" value="" style="width:<?php echo $size[0]; ?>; height: <?php echo $size[1]; ?>;" class="<?php echo $class; ?>"><?php echo esc_attr($vals); ?></textarea> <?php if(isset($option['comment'])): ?><div class="comment"><?php echo $option['comment']; ?></div><?php endif; ?>
+		<textarea name="<?php echo $option['name']; ?>" id="<?php echo $div_id; ?>" placeholder="<?php echo $option['label']; ?>" value="" style="width:<?php echo $size[0]; ?>; height: <?php echo $size[1]; ?>;" class="<?php echo $class; ?>"><?php echo esc_attr($vals); ?></textarea> <?php if(isset($option['comment'])): ?><div class="comment"><?php echo $option['comment']; ?></div><?php endif; ?>
 	</div>
 	<div class="simplr-clr"></div>
 	<?php
@@ -174,8 +174,23 @@ class SREG_Form {
 		<div class="option-field date <?php echo apply_filters($option['name'].'_error_class',''); ?>">
 		<label for="<?php echo $option['name']; ?>"><?php echo $option['label'] . show_required($option); ?></label>
 		<div class="simplr-clr"></div>
-		<select name="<?php echo $option['name']. '-mo'; ?>" id="<?php echo $option['name']. '-mo'; ?>" class="<?php echo @$class; ?>">
-		<option value=""><?php _e('Select Month...','simplr-reg'); ?></option>
+		<select name="<?php echo $option['name'] . '-dy'; ?>" id="<?php echo $option['name']. '-dy'; ?>" class="day <?php echo @$class; ?>">
+		<option value="">Dia</option>
+		<?php $i = 1;
+		if ( !isset($ldy) ) { $ldy = ''; }
+		while($i <= 31) {
+			if($i == "$ldy") { $selected = 'selected'; } else { $selected = '';}
+			if($i < 10) {
+				$y = sprintf('%02d',$i);
+				echo '<option value="' .$y .'" ' .$selected .'>'.$y.'</option>';
+			} else {
+				echo '<option value="'.$i .'" ' .$selected .'>' .$i .'</option>';
+			}
+			$i++;
+		} ?>
+		</select>
+		<select name="<?php echo $option['name']. '-mo'; ?>" id="<?php echo $option['name']. '-mo'; ?>" class="month <?php echo @$class; ?>">
+		<option value="">Mês</option>
 		<?php if ( !isset($lmo) ) { $lmo = ''; } ?>
 		<option value="01" <?php if($lmo == '01') {echo 'selected'; } ?>><?php _e('Jan','simplr-reg'); ?></option>
 		<option value="02" <?php if($lmo == '02') {echo 'selected'; } ?>><?php _e('Feb','simplr-reg'); ?></option>
@@ -190,23 +205,8 @@ class SREG_Form {
 		<option value="11" <?php if($lmo == '11') {echo 'selected'; } ?>><?php _e('Nov','simplr-reg'); ?></option>
 		<option value="12" <?php if($lmo == '12') {echo 'selected'; } ?>><?php _e('Dec','simplr-reg'); ?></option>
 		</select>
-		<select name="<?php echo $option['name'] . '-dy'; ?>" id="<?php echo $option['name']. '-dy'; ?>" class="<?php echo @$class; ?>">
-		<option value=""><?php _e('Select Day...','simplr-reg'); ?></option>
-		<?php $i = 1;
-		if ( !isset($ldy) ) { $ldy = ''; }
-		while($i <= 31) {
-			if($i == "$ldy") { $selected = 'selected'; } else { $selected = '';}
-			if($i < 10) {
-				$y = sprintf('%02d',$i);
-				echo '<option value="' .$y .'" ' .$selected .'>'.$y.'</option>';
-			} else {
-				echo '<option value="'.$i .'" ' .$selected .'>' .$i .'</option>';
-			}
-			$i++;
-		} ?>
-		</select>
-		<select name="<?php echo $option['name'] . '-yr'; ?>" id="<?php echo $option['name']. '-yr'; ?>" class="<?php echo @$class; ?>">
-		<option value=""><?php _e('Select Year...','simplr-reg'); ?></option>
+		<select name="<?php echo $option['name'] . '-yr'; ?>" id="<?php echo $option['name']. '-yr'; ?>" class="year <?php echo @$class; ?>">
+		<option value="">Ano</option>
 		<?php $i = $years[0];
 		if ( !isset($lyr) ) { $lyr = ''; }
 		while($i >= $years[0] && $i <= $years[1]) {

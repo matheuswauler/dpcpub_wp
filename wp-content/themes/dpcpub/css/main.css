@@ -4,10 +4,60 @@ body{
 	line-height: 1.5em;
 	color: #242424;
 }
+input[type=text],input[type=email],input[type=password],input[type=num],input[type=tel], textarea, select{
+	box-sizing: border-box;
+	padding: 13px;
+	color: #2a2a2a;
+	background: white;
+	height: 47px;
+	margin: 10px 0;
+	display: block;
+	border-radius: 0;
+	outline-color: #79C441;
+	font-size: 16px;
+	border: 1px solid #c6c6c6;
+	font-family: 'Lato', 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+input[type=submit]{
+	box-sizing: border-box;
+	padding: 14px 0;
+	color: #fff;
+	width: 200px;
+	font-weight: 700;
+	text-transform: uppercase;
+	float: right;
+	text-align: center;
+	background: #79C441;
+	border: 0;
+	margin: 10px 0;
+	display: block;
+	border-radius: 0;
+	outline-color: #79C441;
+	font-size: 16px;
+	font-family: 'Lato', 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+::-webkit-input-placeholder{
+	color: #555;
+}
+
+:-moz-placeholder{
+	color: #555;
+}
+
+::-moz-placeholder{
+	color: #555;
+}
+
+:-ms-input-placeholder{
+	color: #555;
+}
 
 .content{
 	width: 980px;
 	margin: 0 auto;
+}
+.content_medium{
+	width: 800px;
 }
 .content_smaller{
 	width: 700px;
@@ -80,4 +130,74 @@ footer#site_footer .text_right{
 	text-align: center;
 	line-height: 1.3em;
 	padding: 30px 0;
+}
+
+
+/*Cadastro*/
+.gray_header{
+	background: #f2f2f2;
+	text-align: center;
+}
+.gray_header h1{
+	font-size: 36px;
+	font-weight: 300;
+	color: #6f6f6f;
+	line-height: 1em;
+	padding: 30px 0;
+	margin: 0;
+}
+
+.main_content{
+	margin: 30px auto;
+}
+.simplr-reg{
+	width: 100%;
+	display: block;
+}
+#simplr-reg label{
+	display: none;
+}
+#simplr-reg .simplr-clr,
+#simplr-reg br{
+	display: none;
+}
+#simplr-reg .simplr-field,
+#simplr-reg .option-field{
+	width: 46%;
+	float: left;
+	display: block;
+}
+#simplr-reg input[type=text],
+#simplr-reg input[type=password],
+#simplr-reg select{
+	width: 100%;
+}
+#simplr-reg .date select.day,
+#simplr-reg .date select.month{
+	width: 25%;
+	float: left;
+}
+#simplr-reg .date select.month{
+	margin: 10px 5%;
+}
+#simplr-reg .date select.year{
+	width: 40%;
+	float: left;
+}
+
+#simplr-reg .first_name,
+#simplr-reg .sexo,
+#simplr-reg .endereco,
+#simplr-reg .estado,
+#simplr-reg .universidade,
+#simplr-reg .telefone,
+#simplr-reg .email_confirm,
+#simplr-reg .password_confirm{
+	float: right;
+}
+
+.simplr-message.error{
+	background: #fdd3cf;
+	color: #de2211;
+	padding: 5px 10px;
 }

@@ -309,11 +309,11 @@ function simplr_build_form($data,$atts) {
 		$fb_user = null;
 	}
 
-	$label_email = apply_filters('simplr_label_email', __('Email Address:','simplr-reg') );
-	$label_confirm_email = apply_filters('simplr_label_confirm_email', __('Confirm Email:','simplr-reg') );
-	$label_username = apply_filters('simplr_label_username', __('Your Username:','simplr-reg') );
-	$label_pass = apply_filters('simplr_label_password', __('Choose a Password','simplr-reg'));
-	$label_confirm = apply_filters('simplr_label_confirm', __('Confirm Password','simplr-reg'));
+	$label_email = apply_filters('simplr_label_email', 'E-mail' );
+	$label_confirm_email = apply_filters('simplr_label_confirm_email', 'Confirmar e-mail' );
+	$label_username = apply_filters('simplr_label_username', 'Nome de usuário' );
+	$label_pass = apply_filters('simplr_label_password', 'Senha' );
+	$label_confirm = apply_filters('simplr_label_confirm', 'Confirmar senha' );
 
 	//POST FORM
 	$form = '';
@@ -331,7 +331,7 @@ function simplr_build_form($data,$atts) {
 	if( !in_array('username',$fields) OR empty($custom->fields->custom['username']) ) {
 		$form .=  '<div class="simplr-field '.apply_filters('username_error_class','') .'">';
 		$form .=  '<label for="username" class="left">' .@esc_attr($label_username ).' <span class="required">*</span></label>';
-		$form .=  '<input type="text" name="username" class="right" value="'.@esc_attr($data['username']) .'" /><br/>';
+		$form .=  '<input type="text" name="username" placeholder="' .@esc_attr($label_username ).'" class="right" value="'.@esc_attr($data['username']) .'" /><br/>';
 		$form .=  '</div><div class="simplr-clr"></div>';
 	}
 
@@ -381,14 +381,14 @@ function simplr_build_form($data,$atts) {
 	if( !in_array('email',$fields) ) {
 		$form .=  '<div class="simplr-field email-field '.apply_filters('email_error_class','').'">';
 		$form .=  '<label for="email" class="left">' .$label_email .' <span class="required">*</span></label>';
-		$form .=  '<input type="text" name="email" class="right" value="'.esc_attr(@$data['email']) .'" /><br/>';
+		$form .=  '<input type="text" name="email" class="right" value="'.esc_attr(@$data['email']) .'" placeholder="' .$label_email .'" /><br/>';
 		$form .=  '</div><div class="simplr-clr"></div>';
 	}
 
 	if( !in_array('email_confirm', $fields) ) {
-		$form .=  '<div class="simplr-field email-field '.apply_filters('email_error_class','').'">';
+		$form .=  '<div class="simplr-field email-field '.'email_confirm'.'">';
 		$form .=  '<label for="email" class="left">' .$label_confirm_email .' <span class="required">*</span></label>';
-		$form .=  '<input type="text" name="email_confirm" class="right" value="'.esc_attr(@$data['email_confirm']) .'" /><br/>';
+		$form .=  '<input type="text" name="email_confirm" class="right" value="'.esc_attr(@$data['email_confirm']) .'" placeholder="' .$label_confirm_email .'" /><br/>';
 		$form .=  '</div><div class="simplr-clr"></div>';
 	}
 
@@ -399,12 +399,12 @@ function simplr_build_form($data,$atts) {
 	{
 		$form .=  '<div class="simplr-field '.apply_filters('password_error_class','').'">';
 		$form .=  '<label for="password" class="left">' .$label_pass .'</label>';
-		$form .=  '<input type="password" name="password" class="right" value="'.esc_attr(@$data['password']) .'"/><br/>';
+		$form .=  '<input type="password" name="password" class="right" value="'.esc_attr(@$data['password']) .'" placeholder="' .$label_pass .'" /><br/>';
 		$form .=  '</div>';
 
-		$form .=  '<div class="simplr-field '.apply_filters('password_error_class','').'">';
+		$form .=  '<div class="simplr-field '.'password_confirm'.'">';
 		$form .=  '<label for="password-confirm" class="left">' .$label_confirm .'</label>';
-		$form .=  '<input type="password" name="password_confirm" class="right" value="'.esc_attr(@$data['password_confirm']) .'"/><br/>';
+		$form .=  '<input type="password" name="password_confirm" class="right" value="'.esc_attr(@$data['password_confirm']) .'" placeholder="' .$label_confirm .'" /><br/>';
 		$form .=  '</div>';
 	}
 
@@ -423,7 +423,7 @@ function simplr_build_form($data,$atts) {
 	}
 
 	//submission button. Use filter to custommize
-	$form .=  apply_filters('simplr-reg-submit', '<input type="submit" name="submit-reg" value="' . __('Register','simplr-reg') . '" class="submit button">');
+	$form .=  apply_filters('simplr-reg-submit', '<input type="submit" name="submit-reg" value="Finalizar Cadastro" class="submit button">');
 
 	//wordress nonce for security
 	$nonce = wp_create_nonce('simplr_nonce');
