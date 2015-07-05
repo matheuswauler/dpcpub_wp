@@ -18,7 +18,8 @@ input[type=text],input[type=email],input[type=password],input[type=num],input[ty
 	border: 1px solid #c6c6c6;
 	font-family: 'Lato', 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-input[type=submit]{
+input[type=submit],
+.link_input{
 	box-sizing: border-box;
 	padding: 14px 0;
 	color: #fff;
@@ -34,6 +35,8 @@ input[type=submit]{
 	border-radius: 0;
 	outline-color: #79C441;
 	font-size: 16px;
+	line-height: 1.3em;
+	text-decoration: none;
 	font-family: 'Lato', 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 ::-webkit-input-placeholder{
@@ -67,7 +70,7 @@ header#site_header{
 	text-align: center;
 }
 header#site_header .header_inner{
-	padding: 20px 0;
+	padding: 10px 0;
 	border-bottom: 1px solid #dfdfdf;
 }
 header#site_header h1{
@@ -76,7 +79,7 @@ header#site_header h1{
 }
 header#site_header .menu_principal{
 	float: right;
-	margin: 3px 0;
+	margin: 33px 0;
 }
 header#site_header .menu_principal a{
 	color: #242424;
@@ -118,7 +121,6 @@ footer#site_footer .text_right{
 }
 .black_track_description h1{
 	color: #79c441;
-	text-transform: uppercase;
 	margin: 10px 0 30px;
 }
 
@@ -130,6 +132,50 @@ footer#site_footer .text_right{
 	text-align: center;
 	line-height: 1.3em;
 	padding: 30px 0;
+}
+
+.user_signin_signup{
+	margin: 40px 0;
+}
+
+.user_signin_signup .default_box_settings{
+	width: 50%;
+	float: left;
+	padding: 0 60px;
+	box-sizing: border-box;
+}
+.user_signin_signup .default_box_settings h2{
+	font-size: 27px;
+	font-weight: 700;
+	margin-top: 0;
+	/*text-align: center;*/
+}
+.user_signin_signup .default_box_settings h2 img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.user_signin_signup .login_content_box h2{ color: #79c441; }
+
+.user_signin_signup .default_box_settings input[type=text],
+.user_signin_signup .default_box_settings input[type=password]{
+	width: 100%;
+	box-sizing: border-box;
+}
+.user_signin_signup .login_content_box .login-username label,
+.user_signin_signup .login_content_box .login-password label{
+	display: none;
+}
+.user_signin_signup .login_content_box .login-remember{
+	float: left;
+	font-size: 14px;
+}
+
+.cadastro_content_box{
+	border-left: 1px solid #eee;
+	height: 250px;
+}
+.cadastro_content_box a.link_input{
+	background: #242424;
 }
 
 
@@ -200,4 +246,68 @@ footer#site_footer .text_right{
 	background: #fdd3cf;
 	color: #de2211;
 	padding: 5px 10px;
+}
+
+
+/*Área restrita*/
+.logout_content{
+	/*background: #f2f2f2;*/
+	color: #6f6f6f;
+	padding: 10px 0;
+}
+.logout_content a{
+	color: #e74c3c;
+}
+
+.crescimento_legenda{
+	list-style: none;
+	padding: 0;
+	margin: 40px 0;
+}
+.crescimento_legenda li{
+	width: 25%;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 2%;
+}
+.cor_box{
+	width: 35px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.amarelo{ background: #fbd126; color: #fff; }
+.verde{ background: #79c441; color: #fff; }
+.vermelho{ background: #e74c3c; color: #fff; }
+.cor_label{
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 55px);
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+.tabela_comparativa{
+	width: 100%;
+	border-collapse: collapse;
+}
+.tabela_comparativa thead th{
+	background: #2a2a2a;
+	color: #fff;
+	text-transform: uppercase;
+}
+.tabela_comparativa .seq_column{
+	width: 160px;
+	text-align: center;
+	padding: 10px;
+	font-weight: 700;
+}
+.tabela_comparativa .desc_column{
+	padding: 10px;
+	text-align: left;
+}
+
+.tabela_comparativa tbody td{
+	border-bottom: 1px solid #f2f2f2;
 }

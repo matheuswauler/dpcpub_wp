@@ -2,10 +2,14 @@
 
 <section class="black_track_description">
 	<div class="content content_smaller">
-		<h1>Breve descrição do projeto</h1>
+		<h1>SOBRE O DPCPub</h1>
 
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a pharetra tellus, vel congue libero. Integer neque ipsum, pharetra ac neque tempor, interdum suscipit ante. Aliquam fermentum ullamcorper nunc, a porta eros tincidunt sit amet. Sed fringilla cursus neque, at dapibus ante aliquet eget. Donec pulvinar augue sed felis cursus, id varius turpis tempor
+			Em tempos de mídias, tecnologias e informações digitais na prática odontológica, a Análise DPCPub é atlas visual comparativo, disponível via web, que integra a descrição da sequência de ossificação dos ossos da região de mão e punho, o posicionamento em relação ao Surto Crescimento Puberal e as características radiográficas presentes no momento da avaliação do exame do paciente.
+		</p>
+
+		<p>
+			Esta ferramenta tem como objetivo auxiliar a clinica diária, na integralidade da avaliação clínica, proporcionando a avaliação de características de indicam o status maturacional de crianças e adolescentes.
 		</p>
 	</div>
 </section>
@@ -17,7 +21,28 @@
 </section>
 
 <section class="user_signin_signup">
-	<div class=""></div>
+	<div class="content clearfix">
+		<div class="default_box_settings login_content_box">
+			<h2>
+				<img src="<?= get_template_directory_uri(); ?>/images/check.svg" />
+				Já sou cadastrado
+			</h2>
+			<?php
+				wp_login_form(array(
+					'redirect' => get_site_url() . '/tabela-comparativa/'
+				));
+			?>
+		</div>
+
+		<div class="default_box_settings cadastro_content_box">
+			<h2>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/plus.svg" />
+				Quero me cadastrar
+			</h2>
+			<p>Realize o seu cadastro e tenha acesso a área restrita com a tabela comparativa.</p>
+			<a href="<?php echo get_site_url(); ?>/cadastro/" class="link_input">CADASTRAR</a>
+		</div>
+	</div>
 </section>
 
 <?php get_footer(); ?>
