@@ -37,7 +37,8 @@ function load_scripts() {
 
 	wp_enqueue_script( 'jquery_2', get_template_directory_uri() . '/js/jquery.js', array(), '2.1.1', true );
 	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', array(), '0', true );
-	wp_enqueue_script( 'js_functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery_2' ), '', true );
+	wp_enqueue_script( 'mask', get_template_directory_uri() . '/js/jquery_mask.js', array('jquery_2'), '0', true );
+	wp_enqueue_script( 'js_functions', get_template_directory_uri() . '/js/functions.js', array( 'mask' ), '', true );
 
 	wp_dequeue_style( 'woocommerce_chosen_styles' );
 	wp_dequeue_script( 'wc-chosen' );

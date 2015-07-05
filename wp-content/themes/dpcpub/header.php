@@ -1,3 +1,11 @@
+<?php
+	if(is_user_logged_in()){
+		if( is_home() || is_page('cadastro') ){
+			wp_redirect( get_permalink( get_page_by_path( 'tabela-comparativa' ) ) );
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>

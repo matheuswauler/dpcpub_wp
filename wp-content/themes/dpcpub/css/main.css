@@ -236,10 +236,14 @@ footer#site_footer .text_right{
 #simplr-reg .endereco,
 #simplr-reg .estado,
 #simplr-reg .universidade,
-#simplr-reg .telefone,
+#simplr-reg .especialidade,
 #simplr-reg .email_confirm,
 #simplr-reg .password_confirm{
 	float: right;
+}
+#simplr-reg .telefone{
+	float: left;
+	margin-right: 54%;
 }
 
 .simplr-message.error{
@@ -252,11 +256,21 @@ footer#site_footer .text_right{
 /*Área restrita*/
 .logout_content{
 	/*background: #f2f2f2;*/
-	color: #6f6f6f;
+	color: #fff;
 	padding: 10px 0;
+	background: #feda00;
+	font-size: 14px;
+	background: #1eb500; /* Old browsers */
+	background: -moz-linear-gradient(left,  #1eb500 0%, #bcd648 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1eb500), color-stop(100%,#bcd648)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #1eb500 0%,#bcd648 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #1eb500 0%,#bcd648 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #1eb500 0%,#bcd648 100%); /* IE10+ */
+	background: linear-gradient(to right,  #1eb500 0%,#bcd648 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1eb500', endColorstr='#bcd648',GradientType=1 ); /* IE6-9 */
 }
 .logout_content a{
-	color: #e74c3c;
+	color: #fff;
 }
 
 .crescimento_legenda{
