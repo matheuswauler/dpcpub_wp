@@ -294,6 +294,9 @@ footer#site_footer .text_right{
 .amarelo{ background: #fbd126; color: #fff; }
 .verde{ background: #79c441; color: #fff; }
 .vermelho{ background: #e74c3c; color: #fff; }
+.color_amarelo{ color: #fbd126; }
+.color_.verde{ color: #79c441; }
+.color_.vermelho{ color: #e74c3c; }
 .cor_label{
 	display: inline-block;
 	vertical-align: middle;
@@ -310,18 +313,167 @@ footer#site_footer .text_right{
 	background: #2a2a2a;
 	color: #fff;
 	text-transform: uppercase;
+	padding: 15px 12px;
 }
 .tabela_comparativa .seq_column{
 	width: 160px;
 	text-align: center;
-	padding: 10px;
 	font-weight: 700;
 }
 .tabela_comparativa .desc_column{
-	padding: 10px;
 	text-align: left;
+}
+.tabela_comparativa a{
+	padding: 12px;
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	transition: background 0.3s ease;
+}
+.tabela_comparativa tr:hover a{
+	background: rgba(0,0,0,0.1);
 }
 
 .tabela_comparativa tbody td{
 	border-bottom: 1px solid #f2f2f2;
+}
+
+
+/*CSS estágio single*/
+.single_estagio{
+	background: #000;
+	color: #fff;
+}
+.single_estagio header h1{
+	font-size: 36px;
+	font-weight: 300;
+	float: left;
+	margin: 25px 0;
+}
+.single_estagio header a.voltar{
+	color: #fff;
+	display: block;
+	float: right;
+	margin: 18px 0;
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: 300;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+.single_estagio header a.voltar:hover{
+	opacity: 0.5;
+}
+.single_estagio header a.voltar span{
+	vertical-align: middle;
+}
+.back_icon{
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url('../images/arrow_back.svg') center no-repeat;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	margin: 0 10px;
+}
+
+.single_estagio h2{
+	font-size: 22px;
+	margin: 20px 0;
+	font-weight: 400;
+	text-align: center;
+}
+.radiographs_wrapper{
+	margin-top: 30px;
+}
+.radiographs_wrapper > div{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+.radiographs_wrapper > div img{
+	max-width: 100%;
+	height: auto;
+}
+.radiographs_wrapper > div ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.waiting_to_upload{
+	width: 250px;
+	margin: 40% auto 0;
+}
+#upload_the_image{
+	position: relative;
+}
+#upload_the_image input[type=file]{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	cursor: pointer;
+}
+.waiting_to_upload a{
+	display: block;
+	padding: 10px 0;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	text-decoration: none;
+	color: inherit;
+	margin: 20px auto;
+	transition: all 0.3s ease;
+	text-align: center;
+}
+.waiting_to_upload form:hover a{
+	color: #000;
+	background: #fff;
+}
+.radiograph_exemple{
+	position: relative;
+}
+.radiograph_image_big{
+	display: block;
+	position: relative;
+}
+
+.magnifier_advise{
+	font-size: 12px;
+	display: block;
+	padding: 5px 0 5px 20px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	z-index: 1;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	background: url('../images/magnifier.svg') left center no-repeat;
+}
+#uploaded_image{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.7s ease;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+#uploaded_image.shown{
+	opacity: 1;
+	visibility: visible;
+}
+.radiograph_upload{
+	position: relative;
+}
+#remove_uploaded_image{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	display: block;
+	z-index: 3;
 }

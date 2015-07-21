@@ -1,4 +1,5 @@
 <?php include 'valida-login.php'; ?>
+<?php include 'login-line.php'; ?>
 
 <?php get_header(); ?>
 
@@ -45,8 +46,16 @@ while ( have_posts() ) : the_post();
 							$cor = !empty( $crescimento_estagio ) ? $crescimento_estagio[0]->slug : 'branco';
 				?>
 							<tr>
-								<td class="seq_column <?php echo $cor; ?>"><?php echo get('numero'); ?></td>
-								<td class="desc_column"><?php the_title(); ?></td>
+								<td class="seq_column <?php echo $cor; ?>">
+									<a href="<?php echo get_permalink(); ?>">
+										<?php echo get('numero'); ?>
+									</a>
+								</td>
+								<td class="desc_column">
+									<a href="<?php echo get_permalink(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</td>
 							</tr>
 				<?php
 						}
@@ -54,8 +63,8 @@ while ( have_posts() ) : the_post();
 				?>
 
 				<tr>
-					<td class="seq_column">0</td>
-					<td class="desc_column">Não se aplica</td>
+					<td class="seq_column"><a>0</a></td>
+					<td class="desc_column"><a>Não se aplica</a></td>
 				</tr>
 			</tbody>
 		</table>
