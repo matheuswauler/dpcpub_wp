@@ -27,6 +27,7 @@
 					<a href="<?php echo get_site_url(); ?>" title="Página inicial" class="<?php if(is_home()) echo 'selected'; ?>">Home</a>
 					<a href="<?php echo get_site_url(); ?>/cadastro/" title="Cadastre-se no site" class="<?php if(is_page('cadastro')) echo 'selected'; ?>">Cadastro</a>
 					<a href="<?php echo get_site_url(); ?>" title="Avaliar experiência de navegação">Avaliar</a>
+					<a href="<?php echo get_site_url(); ?>/pesquisa/" title="Deixe-nos sua opinião">Pesquisa</a>
 				</nav>
 			</div>
 		</div>

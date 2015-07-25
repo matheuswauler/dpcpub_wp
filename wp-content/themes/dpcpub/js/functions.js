@@ -24,14 +24,19 @@ function readURL(input) {
 		var reader = new FileReader();
 
 		reader.onload = function (e) {
-			$('#uploaded_image').attr('src', e.target.result).addClass('shown');
+			if(e.target.result != null){
+				$('#uploaded_image').attr('src', e.target.result).addClass('shown');
+				$('#remove_uploaded_image').show();
+			}
 		};
 
 		reader.readAsDataURL(input.files[0]);
 	}
 }
 function removeImage(){
+	document.getElementById('upload_input').value = null;
 	$('#uploaded_image').removeClass('shown');
+	$('#remove_uploaded_image').hide();
 	setTimeout(function(){
 		$('#uploaded_image').attr('src', '');
 	}, 700);

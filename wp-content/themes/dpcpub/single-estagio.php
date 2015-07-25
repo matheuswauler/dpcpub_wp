@@ -48,14 +48,17 @@
 				</div>
 
 				<div class="radiograph_upload">
-					<a onclick="removeImage();" id="remove_uploaded_image">X</a>
+					<a onclick="removeImage();" id="remove_uploaded_image" title="Remover imagem">X</a>
 					<div id="upload_target">
 						<div class="waiting_to_upload">
 							Para fazer o upload de uma radiografia e comparar as imagens, clique no botão abaixo.
 							<form id="upload_the_image">
 								<a href="#">Adicionar Imagem</a>
-								<input type='file' onchange="readURL(this);" />
+								<input type='file' id="upload_input" onchange="readURL(this);" />
 							</form>
+							<p class="explanation">
+								*A comparacão de radiografia permite a você fazer o upload de uma imagem para visualizá-la lado a lado a imagem de exemplo. A radiografia carregada não é mantida! É apenas exibida de forma temporária e apagada no momento em que você sair da página.
+							</p>
 						</div>
 
 						<img id="uploaded_image" src="#" />

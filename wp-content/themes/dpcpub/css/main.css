@@ -295,8 +295,8 @@ footer#site_footer .text_right{
 .verde{ background: #79c441; color: #fff; }
 .vermelho{ background: #e74c3c; color: #fff; }
 .color_amarelo{ color: #fbd126; }
-.color_.verde{ color: #79c441; }
-.color_.vermelho{ color: #e74c3c; }
+.color_verde{ color: #79c441; }
+.color_vermelho{ color: #e74c3c; }
 .cor_label{
 	display: inline-block;
 	vertical-align: middle;
@@ -476,4 +476,43 @@ footer#site_footer .text_right{
 	cursor: pointer;
 	display: block;
 	z-index: 3;
+	display: none;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.explanation{
+	color: #999;
+	font-size: 12px;
+	line-height: 1.5em;
+	text-align: justify;
+}
+
+.survey_form ol{
+	padding-left: 22px;
+}
+.survey_form ol li{
+	margin: 30px 0;
+}
+.survey_form ol li p{
+	margin: 10px 0;
+}
+.survey_form ol li fieldset{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.survey_form ol li fieldset label{
+	margin-right: 25px;
+}
+.survey_form ol li fieldset label input{
+	margin-right: 5px;
+}
+.survey_form textarea{
+	width: 100%;
+	height: 150px;
+	border: 1px solid #c6c6c6;
 }
