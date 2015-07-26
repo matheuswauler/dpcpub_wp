@@ -1,4 +1,37 @@
 <?php include 'valida-login.php'; ?>
+
+<?php
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+		$ERROR_MSGS = array();
+		if( isblank($_POST['tempo_pesquisa']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 1");
+		}
+		if( isblank($_POST['tempo_pesquisa_todos']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 2");
+		}
+		if( isblank($_POST['avaliacao_completa']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 3");
+		}
+		if( isblank($_POST['nivel_dificuldade']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 4");
+		}
+		if( isblank($_POST['visual_app']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 5");
+		}
+		if( isblank($_POST['so_usado']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 6");
+		}
+		if( isblank($_POST['navegador']) ){
+			array_push($ERROR_MSGS, "Por favor, responda a questão 7");
+		}
+
+		if(empty($ERROR_MSGS)){
+			// envia o e-mail
+		}
+	}
+?>
+
 <?php include 'login-line.php'; ?>
 
 <?php get_header(); ?>
@@ -10,6 +43,12 @@
 </header>
 
 <div class="content_medium main_content">
+	<?php if(!empty($ERROR_MSGS)){ ?>
+		<?php foreach ($ERROR_MSGS as $key => $err) { ?>
+			<div class="simplr-message error"><?php echo $err; ?></div>
+		<?php } ?>
+	<?php } ?>
+
 	<form action="" class="survey_form" method="post">
 		<ol>
 			<li>

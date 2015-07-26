@@ -48,3 +48,10 @@ function load_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
+function isblank($var){
+	if(!isset($var) || is_null($var) || $var == ""){
+		return true;
+	} else {
+		return false;
+	}
+}
