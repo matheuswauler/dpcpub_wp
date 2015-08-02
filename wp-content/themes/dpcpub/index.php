@@ -32,6 +32,7 @@
 					'redirect' => get_site_url() . '/tabela-comparativa/'
 				));
 			?>
+			<a href="<?php echo wp_lostpassword_url( $redirect ); ?>" class="esqueci_minha_senha">Esqueci minha senha</a>
 		</div>
 
 		<div class="default_box_settings cadastro_content_box">

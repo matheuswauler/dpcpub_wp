@@ -1,7 +1,6 @@
 <?php include 'valida-login.php'; ?>
-<?php include 'login-line.php'; ?>
+<?php include 'header.php'; ?>
 
-<?php get_header(); ?>
 
 <?php
 while ( have_posts() ) : the_post();
