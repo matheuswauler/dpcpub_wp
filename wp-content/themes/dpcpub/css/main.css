@@ -100,7 +100,7 @@ header#site_header .menu_principal a.selected{
 }
 
 footer#site_footer{
-	background: #e8e8e8;
+	background: #F2F2F2;
 	color: #979797;
 	font-size: 14px;
 	padding: 8px 0;
@@ -538,4 +538,76 @@ footer#site_footer .text_right{
 .failure{
 	background: #FDD3CF;
 	color: #DE2211;
+}
+
+
+/*Ajuda*/
+.help_page_wrapper{
+	margin: 40px 0;
+}
+.menu_help{
+	width: 20%;
+	float: left;
+	margin-right: 5%;
+	border-bottom: 1px solid #DFDFDF;
+}
+.menu_help h1{
+	font-size: 20px;
+	margin: 10px 0;
+}
+.menu_help a{
+	padding: 10px 0;
+	display: block;
+	color: #242424;
+	font-size: 14px;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	border-top: 1px solid #DFDFDF;
+}
+.menu_help a:hover,
+.menu_help a.selected{
+	color: #79c441;
+}
+
+.main_help{
+	float: right;
+	width: 75%;
+}
+.main_help h2{
+	color: #79c441;
+	font-size: 26px;
+	padding: 10px 0;
+	margin: 0 0 20px;
+	border-bottom: 1px solid #DFDFDF;
+}
+.main_help .text_wrapper{
+	color: #242424;
+	font-size: 100%;
+	line-height: 1.5em;
+	text-align: justify;
+}
+.main_help .text_wrapper ol{
+	padding-left: 30px;
+}
+.main_help .text_wrapper ol li{
+	margin: 1em 0;
+}
+
+.contato_form ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.contato_form ul li{
+	float: left;
+	width: 48%;
+}
+.contato_form ul li.left{
+	margin-right: 4%;
+}
+.contato_form ul li input{
+	width: 100%;
+}
+.contato_form textarea{
+	margin: 10px 0;
 }

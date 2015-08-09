@@ -26,17 +26,19 @@
 			array_push($ERROR_MSGS, "Por favor, responda a questão 7");
 		}
 
-		$to = "matheus_auler95@hotmail.com";
-		$subject = "Uma nova pesquisa foi realizada no site DPCPub";
-
-		$message = file_get_contents(get_template_directory_uri() . '/emails/pesquisa.html');
-		$message = str_replace('{{url_site}}', get_site_url(), $message);
-		foreach ($_POST as $key => $value) {
-			$message = str_replace('{{'.$key.'}}', $value, $message);
-		}
-
-		$headers = array('Content-Type: text/html; charset=UTF-8');
 		if(empty($ERROR_MSGS)){
+
+			$to = "matheus_auler95@hotmail.com";
+			$subject = "Uma nova pesquisa foi realizada no site DPCPub";
+
+			$message = file_get_contents(get_template_directory_uri() . '/emails/pesquisa.html');
+			$message = str_replace('{{url_site}}', get_site_url(), $message);
+			foreach ($_POST as $key => $value) {
+				$message = str_replace('{{'.$key.'}}', $value, $message);
+			}
+
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+		
 			if(wp_mail( $to, $subject, $message, $headers)){
 				$HTML_RESPONSE = '<div class="success">Pesquisa realizada com sucesso!</div>';
 			} else {
