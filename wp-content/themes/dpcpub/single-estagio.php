@@ -19,7 +19,7 @@
 				<h1>Comparar Radiografias</h1>
 
 				<a href="<?php echo get_site_url(); ?>/tabela-comparativa" class="voltar">
-					<i class="back_icon"></i> <span>Voltar</span>
+					<i class="back_icon"></i> <span>Voltar à tabela</span>
 				</a>
 			</header>
 
@@ -57,7 +57,7 @@
 								<input type='file' id="upload_input" onchange="readURL(this);" />
 							</form>
 							<p class="explanation">
-								*A comparacão de radiografia permite a você fazer o upload de uma imagem para visualizá-la lado a lado a imagem de exemplo. A radiografia carregada não é mantida! É apenas exibida de forma temporária e apagada no momento em que você sair da página.
+								*A comparacão de radiografia permite a você fazer o upload de uma imagem para visualizá-la lado a lado a imagem de exemplo. A radiografia carregada não é enviada ao servidor, ela é mantida apenas localmente e Exibida de forma temporária.
 							</p>
 						</div>
 
