@@ -250,15 +250,14 @@ footer#site_footer .text_right{
 #simplr-reg .sexo,
 #simplr-reg .endereco,
 #simplr-reg .estado,
-#simplr-reg .universidade,
-#simplr-reg .especialidade,
+#simplr-reg .telefone,
+#simplr-reg .ano_graduacao,
+#simplr-reg .ano_especializacao,
+#simplr-reg .especializacao_andamento,
+#simplr-reg .instituicao_especializacao_andamento,
 #simplr-reg .email_confirm,
 #simplr-reg .password_confirm{
 	float: right;
-}
-#simplr-reg .telefone{
-	float: left;
-	margin-right: 54%;
 }
 
 .simplr-message.error{
