@@ -23,6 +23,11 @@
 				</a>
 			</header>
 
+			<nav class="next_and_previous_link">
+				<?php previous_post('%', '<strong>Estágio Anterior:</strong>'); ?>
+				<?php next_post('%', '<strong>Próximo Estágio:</strong>'); ?>
+			</nav>
+
 			<h2 class="color_<?php echo $cor; ?>">
 				<?php echo get('numero'); ?>
 				-

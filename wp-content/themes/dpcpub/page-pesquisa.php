@@ -71,8 +71,9 @@
 	<form action="" class="survey_form" method="post">
 		<ol>
 			<li>
-				<p>Quanto tempo, em média, você levou para realizar a avaliação de cada caso, individualmente?</p>
-				<fieldset>
+				<p><label for="tempo_pesquisa">Quanto tempo, em média, você levou para realizar a avaliação de cada caso, individualmente?</label></p>
+				<input type="text" name="tempo_pesquisa" id="tempo_pesquisa" placeholder="Ex: 5 min" />
+				<?php /*<fieldset>
 					<label for="min_1">
 						<input type="radio" name="tempo_pesquisa" value="1 min" id="min_1" <?php echo isset($_POST['tempo_pesquisa']) && $_POST['tempo_pesquisa'] == '1 min' ? 'CHECKED' : ''; ?> />
 						1 min
@@ -93,12 +94,13 @@
 						<input type="radio" name="tempo_pesquisa" value="10 min" id="min_10" <?php echo isset($_POST['tempo_pesquisa']) && $_POST['tempo_pesquisa'] == '10 min' ? 'CHECKED' : ''; ?> />
 						10 min
 					</label>
-				</fieldset>
+				</fieldset> */ ?>
 			</li>
 
 			<li>
-				<p>Quanto tempo você levou para realizar a avaliação de todos os casos?</p>
-				<fieldset>
+				<p><label for="tempo_pesquisa_todos">Quanto tempo você levou para realizar a avaliação de todos os casos?</label></p>
+				<input type="text" name="tempo_pesquisa_todos" id="tempo_pesquisa_todos" placeholder="Ex: 60 min" />
+				<?php /*<fieldset>
 					<label for="min_20">
 						<input type="radio" name="tempo_pesquisa_todos" value="20 min" id="min_20" <?php echo isset($_POST['tempo_pesquisa_todos']) && $_POST['tempo_pesquisa_todos'] == '20 min' ? 'CHECKED' : ''; ?> />
 						20 min
@@ -123,7 +125,7 @@
 						<input type="radio" name="tempo_pesquisa_todos" value="105 min" id="min_105" <?php echo isset($_POST['tempo_pesquisa_todos']) && $_POST['tempo_pesquisa_todos'] == '105 min' ? 'CHECKED' : ''; ?> />
 						105 min
 					</label>
-				</fieldset>
+				</fieldset> */ ?>
 			</li>
 
 			<li>
@@ -164,6 +166,11 @@
 						Muito difícil
 					</label>
 				</fieldset>
+			</li>
+
+			<li>
+				<p><label for="maior_dificuldade">Qual foi a maior dificuldade encontrada ao avaliar as radiografias?</label></p>
+				<input type="text" name="maior_dificuldade" id="maior_dificuldade" />
 			</li>
 
 			<li>

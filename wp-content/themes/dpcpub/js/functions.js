@@ -18,7 +18,13 @@ $(document).ready(function(){
 		$('.radiograph_image_big').zoom();
 	}
 
-	checkImage();
+	if(document.getElementById('uploaded_image')){
+		checkImage();
+	}
+
+	if(document.getElementById('radiografias_avaliacao')){
+		$('#radiografias_avaliacao li a').fancybox({});
+	}
 });
 
 function checkImage(){

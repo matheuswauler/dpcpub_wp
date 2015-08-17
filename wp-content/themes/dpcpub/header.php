@@ -26,13 +26,13 @@
 				</h1>
 
 				<nav class="menu_principal">
-					<a href="<?php echo get_site_url(); ?>" title="Página inicial" class="<?php if(is_home()) echo 'selected'; ?>">Home</a>
+					<a href="<?php echo get_site_url(); ?>" title="Página inicial" class="<?php if(is_home() || is_page('tabela-comparativa')) echo 'selected'; ?>">Home</a>
 					<?php if(!is_user_logged_in()): ?>
 						<a href="<?php echo get_site_url(); ?>/cadastro/" title="Cadastre-se no site" class="<?php if(is_page('cadastro')) echo 'selected'; ?>">Cadastro</a>
 					<?php else: ?>
-						<a href="<?php echo get_site_url(); ?>" title="Avaliar radiografias">Avaliar</a>
-						<a href="<?php echo get_site_url(); ?>/pesquisa/" title="Deixe-nos sua opinião">Pesquisa</a>
-						<a href="<?php echo get_site_url(); ?>/tutorial/" title="Precisa de ajuda?">Ajuda</a>
+						<a href="<?php echo get_site_url(); ?>/avaliar/" title="Avaliar radiografias" class="<?php if(is_page('avaliar')) echo 'selected'; ?>">Avaliar</a>
+						<a href="<?php echo get_site_url(); ?>/pesquisa/" title="Deixe-nos sua opinião" class="<?php if(is_page('pesquisa')) echo 'selected'; ?>">Pesquisa</a>
+						<a href="<?php echo get_site_url(); ?>/tutorial/" title="Precisa de ajuda?" class="<?php if(is_page('tutorial') || is_page('referencias-bibliograficas') || is_page('contato')) echo 'selected'; ?>">Ajuda</a>
 					<?php endif; ?>
 				</nav>
 			</div>
