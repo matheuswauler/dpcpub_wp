@@ -12,6 +12,14 @@
 	while ( have_posts() ) : the_post();
 		$crescimento_estagio = get_the_terms(get_the_ID(), 'crescimento');
 		$cor = !empty( $crescimento_estagio ) ? $crescimento_estagio[0]->slug : 'branco';
+
+		$next_post = get_next_post();
+		$cor_proximo = get_the_terms($next_post->ID, 'crescimento');
+		$cor_proximo = !empty( $cor_proximo ) ? $cor_proximo[0]->slug : 'branco';
+
+		$previous_post = get_previous_post();
+		$cor_anterior = get_the_terms($previous_post->ID, 'crescimento');
+		$cor_anterior = !empty( $cor_anterior ) ? $cor_anterior[0]->slug : 'branco';
 	?>
 
 		<div class="content">
@@ -24,14 +32,16 @@
 			</header>
 
 			<nav class="next_and_previous_link">
-				<?php previous_post('%', '<strong>Estágio Anterior:</strong>'); ?>
-				<?php next_post('%', '<strong>Próximo Estágio:</strong>'); ?>
+				<div class="estagio_anterior <?php echo $cor_anterior; ?>"><?php previous_post('%', '<strong>Estágio Anterior:</strong>'); ?></div>
+				<div class="proximo_estagio <?php echo $cor_proximo; ?>"><?php next_post('%', '<strong>Próximo Estágio:</strong>'); ?></div>
 			</nav>
 
 			<h2 class="color_<?php echo $cor; ?>">
 				<?php echo get('numero'); ?>
 				-
 				<?php the_title(); ?>
+
+				<span class="open_details close_details_box" title="Ver detalhes deste estágio">+</span>
 			</h2>
 
 			<div class="radiographs_wrapper clearfix">
@@ -67,6 +77,34 @@
 						</div>
 
 						<img id="uploaded_image" src="#" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="details_overlay">
+			<div class="details_container">
+				<span class="close_details_box">X</span>
+
+				<div class="first_container">
+					<h3 class="color_<?php echo $cor; ?>">Ilustração</h3>
+					<div class="details_image_wrapper <?php echo $cor; ?>">
+						<?php echo get_image('ilustracao'); ?>
+					</div>
+				</div>
+
+				<div class="second_container">
+					<h3 class="color_<?php echo $cor; ?>">Imagem aproximada</h3>
+					<div class="details_image_wrapper <?php echo $cor; ?>">
+						<?php echo get_image('aproximada'); ?>
+					</div>
+				</div>
+
+				<div class="third_container">
+					<h3 class="color_<?php echo $cor; ?>">Imagem marcada</h3>
+					<div class="details_image_wrapper <?php echo $cor; ?>">
+						<?php echo get_image('marcada'); ?>
 					</div>
 				</div>
 			</div>

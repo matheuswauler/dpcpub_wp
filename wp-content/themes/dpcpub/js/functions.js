@@ -20,6 +20,9 @@ $(document).ready(function(){
 
 	if(document.getElementById('uploaded_image')){
 		checkImage();
+		$('.close_details_box').click(function(){
+			$('.details_overlay').fadeToggle(300);
+		});
 	}
 
 	if(document.getElementById('radiografias_avaliacao')){

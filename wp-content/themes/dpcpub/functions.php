@@ -3,7 +3,7 @@
 // Tamanho das imagens
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'raiox_thumb', 200, 200, true );
+	add_image_size( 'raiox_thumb', 240, 240, true );
 }
 
 // Adiciona Excerpt nas paginas

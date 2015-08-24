@@ -350,6 +350,7 @@ footer#site_footer .text_right{
 .single_estagio{
 	background: #000;
 	color: #fff;
+	overflow-x: hidden;
 }
 .single_estagio header h1{
 	font-size: 36px;
@@ -475,7 +476,8 @@ footer#site_footer .text_right{
 .radiograph_upload{
 	position: relative;
 }
-#remove_uploaded_image{
+#remove_uploaded_image,
+.close_details_box{
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -498,25 +500,46 @@ footer#site_footer .text_right{
 	text-align: justify;
 }
 
+.next_and_previous_link div{
+	position: absolute;
+	z-index: 100;
+	top: 50%;
+	transition: all 0.5s ease;
+}
 .next_and_previous_link a{
 	display: block;
-	position: absolute;
-	z-index: 10000;
 	color: #fff;
-	top: 50%;
 	text-decoration: none;
 	font-size: 16px;
+	line-height: 1.5em;
+	padding: 10px;
+	width: 260px;
+	height: 100px;
+	overflow: hidden;
+	box-sizing: border-box;
+	transition: all 0.5s ease;
 }
-.next_and_previous_link a:first-child{
-	left: 0;
+.next_and_previous_link .estagio_anterior{
+	left: -200px;
 }
-.next_and_previous_link a:last-child{
-	right: 0;
+.next_and_previous_link .estagio_anterior a{
+	padding-right: 60px;
+	background: url('../images/left_big_arrow.svg') right 10px center no-repeat;
+}
+.next_and_previous_link .proximo_estagio{
+	right: -200px;
+}
+.next_and_previous_link .proximo_estagio a{
+	padding-left: 60px;
+	background: url('../images/right_big_arrow.svg') left 10px center no-repeat;
 }
 .next_and_previous_link a strong{
 	display: block;
 	font-size: 18px;
+	margin-bottom: 5px;
 }
+.next_and_previous_link .estagio_anterior:hover{ left: 0; }
+.next_and_previous_link .proximo_estagio:hover{ right: 0; }
 
 
 /*Pesquisa*/
@@ -681,3 +704,57 @@ footer#site_footer .text_right{
 }
 
 
+.details_overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	background-color: rgba(0,0,0,0.8);
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.details_overlay .details_container{
+	max-width: 850px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 15%;
+	text-align: center;
+	position: relative;
+}
+.details_overlay .details_container > div{
+	width: 31%;
+	float: left;
+}
+.details_overlay .details_container > div.second_container{
+	margin: 0 3.5%;
+}
+.details_overlay .details_container h3{
+	font-size: 20px;
+}
+.details_overlay .details_container > div .details_image_wrapper{
+	border-radius: 100%;
+	height: 240px;
+	width: 240px;
+	padding: 5px;
+	overflow: hidden;
+}
+.details_overlay .details_container > div .details_image_wrapper img{
+	display: block;
+	border-radius: 100%;
+	width: 100%;
+	height: 100%;
+}
+.close_details_box{
+	display: block;
+	top: -20px;
+	right: 0;
+}
+.open_details{
+	position: static;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	color: #fff;
+	font-weight: 700;
+}
