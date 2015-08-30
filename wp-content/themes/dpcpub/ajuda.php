@@ -29,8 +29,8 @@
 			$to = "matheus_auler95@hotmail.com";
 			$subject = "Um novo contato foi enviado do site DPCPub";
 
-			$message = file_get_contents(get_template_directory_uri() . '/emails/contato.html');
-			$message = str_replace('{{url_site}}', get_site_url(), $message);
+			$message = file_get_contents(get_theme_root() . '/dpcpub/emails/contato.html');
+			$message = str_replace('{{url_site}}', get_template_directory_uri(), $message);
 			foreach ($_POST as $key => $value) {
 				$message = str_replace('{{'.$key.'}}', $value, $message);
 			}

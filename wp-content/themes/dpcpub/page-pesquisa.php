@@ -31,8 +31,8 @@
 			$to = "matheus_auler95@hotmail.com";
 			$subject = "Uma nova pesquisa foi realizada no site DPCPub";
 
-			$message = file_get_contents(get_template_directory_uri() . '/emails/pesquisa.html');
-			$message = str_replace('{{url_site}}', get_site_url(), $message);
+			$message = file_get_contents(get_theme_root() . '/dpcpub/emails/pesquisa.html');
+			$message = str_replace('{{url_site}}', get_template_directory_uri(), $message);
 			foreach ($_POST as $key => $value) {
 				$message = str_replace('{{'.$key.'}}', $value, $message);
 			}
