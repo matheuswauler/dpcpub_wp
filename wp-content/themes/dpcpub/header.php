@@ -32,7 +32,7 @@
 					<?php else: ?>
 						<a href="<?php echo get_site_url(); ?>/avaliar/" title="Avaliar radiografias" class="<?php if(is_page('avaliar')) echo 'selected'; ?>">Avaliar</a>
 						<a href="<?php echo get_site_url(); ?>/pesquisa/" title="Deixe-nos sua opinião" class="<?php if(is_page('pesquisa')) echo 'selected'; ?>">Pesquisa</a>
-						<a href="<?php echo get_site_url(); ?>/tutorial/" title="Precisa de ajuda?" class="<?php if(is_page('tutorial') || is_page('referencias-bibliograficas') || is_page('contato')) echo 'selected'; ?>">Ajuda</a>
+						<a href="<?php echo get_site_url(); ?>/como-surgiu/" title="Precisa de ajuda?" class="<?php if(is_page('tutorial') || is_page('referencias-bibliograficas') || is_page('contato')) echo 'selected'; ?>">Ajuda</a>
 					<?php endif; ?>
 				</nav>
 			</div>

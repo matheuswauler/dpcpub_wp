@@ -51,7 +51,11 @@
 					<ul id="radiograph_slider">
 						<?php
 						$images = get_attached_media('image');
+						$id_ilustracao = get_post_meta(get_the_ID(), 'ilustracao', true);
+						$id_aproximada = get_post_meta(get_the_ID(), 'aproximada', true);
+						$id_marcada = get_post_meta(get_the_ID(), 'marcada', true);
 						foreach($images as $img){
+							if(in_array($img->ID, array($id_ilustracao, $id_aproximada, $id_marcada))) continue;
 						?>
 							<li>
 								<a class="radiograph_image_big">
