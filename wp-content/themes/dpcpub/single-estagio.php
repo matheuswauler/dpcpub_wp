@@ -90,14 +90,14 @@
 		<div class="details_overlay">
 			<div class="details_container">
 				<span class="close_details_box">X</span>
-
+				<?php /*
 				<div class="first_container">
 					<h3 class="color_<?php echo $cor; ?>">Ilustração</h3>
 					<div class="details_image_wrapper <?php echo $cor; ?>">
 						<?php echo get_image('ilustracao'); ?>
 					</div>
 				</div>
-
+				*/?>
 				<div class="second_container">
 					<h3 class="color_<?php echo $cor; ?>">Imagem aproximada</h3>
 					<div class="details_image_wrapper <?php echo $cor; ?>">

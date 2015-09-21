@@ -26,7 +26,7 @@
 		}
 
 		if(empty($ERROR_MSGS)){
-			$to = "matheus_auler95@hotmail.com";
+			$to = "cadastro@dpcpub.com.br";
 			$subject = "Um novo contato foi enviado do site DPCPub";
 
 			$message = file_get_contents(get_theme_root() . '/dpcpub/emails/contato.html');

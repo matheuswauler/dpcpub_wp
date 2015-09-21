@@ -10,9 +10,9 @@ input[type=text],input[type=email],input[type=password],input[type=num],input[ty
 	color: #2a2a2a;
 	background: white;
 	height: 47px;
-	margin: 10px 0;
 	display: block;
 	border-radius: 0;
+	margin: 10px 0;
 	outline-color: #79C441;
 	font-size: 16px;
 	border: 1px solid #c6c6c6;
@@ -218,6 +218,11 @@ footer#site_footer .text_right{
 #simplr-reg label{
 	display: none;
 }
+#simplr-reg label.error{
+	display: block;
+	color: #e74c3c;
+	font-size: 11px;
+}
 #simplr-reg .simplr-clr,
 #simplr-reg br{
 	display: none;
@@ -225,13 +230,20 @@ footer#site_footer .text_right{
 #simplr-reg .simplr-field,
 #simplr-reg .option-field{
 	width: 46%;
-	float: left;
-	display: block;
+	margin: 10px 0;
+	display: inline-block;
+	vertical-align: top;
 }
 #simplr-reg input[type=text],
 #simplr-reg input[type=password],
 #simplr-reg select{
 	width: 100%;
+	margin: 0 !important;
+}
+#simplr-reg input[type=text].error,
+#simplr-reg input[type=password].error,
+#simplr-reg select.error{
+	border-color: #fc968d;
 }
 #simplr-reg .date select.day,
 #simplr-reg .date select.month{
@@ -239,7 +251,7 @@ footer#site_footer .text_right{
 	float: left;
 }
 #simplr-reg .date select.month{
-	margin: 10px 5%;
+	margin: 0 5% !important;
 }
 #simplr-reg .date select.year{
 	width: 40%;
@@ -252,12 +264,15 @@ footer#site_footer .text_right{
 #simplr-reg .estado,
 #simplr-reg .telefone,
 #simplr-reg .ano_graduacao,
-#simplr-reg .ano_especializacao,
-#simplr-reg .especializacao_andamento,
-#simplr-reg .instituicao_especializacao_andamento,
+#simplr-reg .inst_espec,
+#simplr-reg .inst_mestr,
+#simplr-reg .inst_douto,
 #simplr-reg .email_confirm,
 #simplr-reg .password_confirm{
-	float: right;
+	margin-left: 7%;
+	margin-left: -webkit-calc(8% - 4px);
+	margin-left: -moz-calc(8% - 4px);
+	margin-left: calc(8% - 4px);
 }
 
 .simplr-message.error{
@@ -398,6 +413,7 @@ footer#site_footer .text_right{
 .radiographs_wrapper > div{
 	width: 50%;
 	float: left;
+	min-height: 640px;
 	text-align: center;
 }
 .radiographs_wrapper > div img{
@@ -443,6 +459,12 @@ footer#site_footer .text_right{
 }
 .radiograph_exemple{
 	position: relative;
+}
+.radiograph_exemple ul li{
+	text-align: center;
+}
+.radiograph_exemple ul li img{
+	display: inline-block;
 }
 .radiograph_image_big{
 	display: block;
@@ -715,7 +737,8 @@ footer#site_footer .text_right{
 	display: none;
 }
 .details_overlay .details_container{
-	max-width: 850px;
+	/*max-width: 850px;*/
+	max-width: 650px;
 	height: 300px;
 	margin: 0 auto;
 	margin-top: 15%;
@@ -723,11 +746,13 @@ footer#site_footer .text_right{
 	position: relative;
 }
 .details_overlay .details_container > div{
-	width: 31%;
+	/*width: 31%;*/
+	width: 45%;
 	float: left;
 }
 .details_overlay .details_container > div.second_container{
-	margin: 0 3.5%;
+	/*margin: 0 3.5%;*/
+	margin: 0 10% 0 0;
 }
 .details_overlay .details_container h3{
 	font-size: 20px;
@@ -737,6 +762,7 @@ footer#site_footer .text_right{
 	height: 240px;
 	width: 240px;
 	padding: 5px;
+	margin: 0 auto;
 	overflow: hidden;
 }
 .details_overlay .details_container > div .details_image_wrapper img{
@@ -757,4 +783,18 @@ footer#site_footer .text_right{
 	margin-left: 10px;
 	color: #fff;
 	font-weight: 700;
+}
+.erro404{
+	margin: 50px 0;
+	text-align: center;
+}
+.erro404 a{
+	display: inline-block;
+	border: 2px solid #e74c3c;
+	padding: 10px 20px;
+	border-radius: 40px;
+	font-size: 16px;
+	margin-left: 20px 0;
+	color: #e74c3c;
+	text-decoration: none;
 }

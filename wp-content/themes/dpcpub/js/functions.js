@@ -8,7 +8,7 @@ $(document).ready(function(){
 		$('#telefone').mask('(99) 9999-9999?9');
 	}
 
-	if(document.getElementById('radiograph_slider')){
+	if(document.getElementById('radiograph_slider') && $('#radiograph_slider li').length > 0){
 		$('#radiograph_slider').bxSlider({
 			infiniteLoop: false,
 			hideControlOnEnd: true,
@@ -27,6 +27,92 @@ $(document).ready(function(){
 
 	if(document.getElementById('radiografias_avaliacao')){
 		$('#radiografias_avaliacao li a').fancybox({});
+	}
+
+	if(document.getElementById('simplr-reg')){
+		$("#simplr-reg").validate({
+			rules: {
+				username: "required",
+				first_name: "required",
+				cro: "required",
+				"dt_nasc-dy": "required",
+				"dt_nasc-mo": "required",
+				"dt_nasc-yr": "required",
+				sexo: "required",
+				cidade: "required",
+				endereco: "required",
+				cep: "required",
+				estado: "required",
+				telefone: "required",
+				universidade: "required",
+				ano_graduacao: "required",
+				especializacao: "required",
+				email: {"required": true, "email": true},
+				email_confirm: {"equalTo": "input[name=email]"},
+				password: "required",
+				password_confirm: {"equalTo": "input[name=password]"}
+			},
+			messages: {
+				username: {
+					required: "O nome de usuário é obrigatório."
+				},
+				first_name: {
+					required: "O nome completo é obrigatório."
+				},
+				cro: {
+					required: "O CRO é obrigatório."
+				},
+				"dt_nasc-dy": {
+					required: ""
+				},
+				"dt_nasc-mo": {
+					required: ""
+				},
+				"dt_nasc-yr": {
+					required: "A data de nascimento é obrigatória."
+				},
+				sexo: {
+					required: "O sexo é obrigatório."
+				},
+				cidade: {
+					required: "A cidade é obrigatória."
+				},
+				endereco: {
+					required: "O endereço é obrigatório."
+				},
+				cep: {
+					required: "O CEP é obrigatório."
+				},
+				estado: {
+					required: "O estado é obrigatório."
+				},
+				telefone: {
+					required: "O telefone é obrigatório."
+				},
+				universidade: {
+					required: "A universidade é obrigatória."
+				},
+				ano_graduacao: {
+					required: "O ano de graduação é obrigatório."
+				},
+				especializacao: {
+					required: "A especialização é obrigatória."
+				},
+				email: {
+					required: "O e-mail é obrigatório.",
+					required: "E-mail inválido."
+				},
+				email_confirm: {
+					equalTo: "Os e-mails não coincidem."
+				},
+				password: {
+					required: "A senha é obrigatória."
+				},
+				password_confirm: {
+					equalTo: "As senhas não coincidem."
+				}
+			}
+		});
 	}
 });
 
@@ -55,7 +141,8 @@ function readURL(input) {
 				image.src = e.target.result;
 				image.onload = function() {
 					bannerImage = document.getElementById('uploaded_image');
-					imgData = getBase64Image(bannerImage, this.width, this.height);
+					var new_height = Math.round(this.height * 1000 / this.width);
+					imgData = getBase64Image(bannerImage, 1000, new_height);
 					localStorage.setItem("imgData", imgData);
 				};
 			}
@@ -81,7 +168,7 @@ function getBase64Image(img, width, height) {
     canvas.height = height;
 
     var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0, width, height);
 
     var dataURL = canvas.toDataURL("image/png");
 

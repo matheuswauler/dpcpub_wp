@@ -169,7 +169,7 @@ class SREG_Form {
 		}
 		$years = $options_array;
 		if ( !is_array($years) || empty($years) || empty($years[0]) ) {
-			$years = array( (date('Y') - 50), date('Y') );
+			$years = array( (date('Y') - 100), date('Y') );
 		} ?>
 		<div class="option-field date <?php echo apply_filters($option['name'].'_error_class',''); ?>">
 		<label for="<?php echo $option['name']; ?>"><?php echo $option['label'] . show_required($option); ?></label>
