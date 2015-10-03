@@ -1,3 +1,5 @@
+SITE = $('meta[name=host]').attr('content');
+
 $(document).ready(function(){
 	$('#user_login').attr('placeholder', 'Nome de usuário');
 	$('#user_pass').attr('placeholder', 'Senha');
@@ -26,7 +28,7 @@ $(document).ready(function(){
 	}
 
 	if(document.getElementById('radiografias_avaliacao')){
-		$('#radiografias_avaliacao li a').fancybox({});
+		$('#radiografias_avaliacao li a.fancy_avaliar').fancybox({});
 	}
 
 	if(document.getElementById('simplr-reg')){
@@ -151,6 +153,32 @@ function readURL(input) {
 		reader.readAsDataURL(input.files[0]);
 	}
 }
+
+function gravaAvaliar(src) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', src, true);
+	xhr.responseType = 'arraybuffer';
+	xhr.onload = function(e) {
+		if (this.status == 200) {
+			var uInt8Array = new Uint8Array(this.response);
+			var i = uInt8Array.length;
+			var binaryString = new Array(i);
+			while (i--) {
+				binaryString[i] = String.fromCharCode(uInt8Array[i]);
+			}
+			var data = binaryString.join('');
+
+			var base64 = window.btoa(data);
+
+			localStorage.setItem("imgData", base64 );
+
+			window.location = SITE + '/estagio/falange-distal-ed/';
+		}
+	};
+
+	xhr.send();
+}
+
 function removeImage(){
 	document.getElementById('upload_input').value = null;
 	$('#uploaded_image').removeClass('shown');

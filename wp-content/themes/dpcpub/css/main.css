@@ -696,17 +696,29 @@ footer#site_footer .text_right{
 	display: block;
 	float: left;
 	margin: 20px 0 20px 4%;
-	position: relative;
-	overflow: hidden;
 }
 #radiografias_avaliacao li.fourth_inline{
 	margin-left: 0;
+}
+#radiografias_avaliacao li a{
+	position: relative;
+	overflow: hidden;
 }
 #radiografias_avaliacao li a,
 #radiografias_avaliacao li a img{
 	display: block;
 	width: 100%;
 	height: auto;
+}
+#radiografias_avaliacao li a.comparar_link{
+	font-size: 14px;
+	text-align: center;
+	margin: 1px 0;
+	text-decoration: none;
+	color: #fff;
+	background: #79c441;
+	padding: 5px 0;
+	cursor: pointer;
 }
 #radiografias_avaliacao li a .overlay{
 	position: absolute;
